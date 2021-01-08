@@ -25,7 +25,7 @@ class Paper {
    ellipseMode(CENTER);
    fill ("white")
    stroke('white');
-   ellipse(0, 0, this.width, this.height);
+   ellipse(0, 0, this.r);
    pop();
    }
 
