@@ -12,12 +12,12 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	paper = new Paper(50, 400, 10);
+	paper = new Paper(50, 399, 50);
 	ground = new Ground(width/2, 430, width, 10);
 	
-	BottomBox = new Dustbin (1320, 414, 200, 90);
-	LeftBox = new Dustbin (1220, 374, 100, 0);
-	RightBox = new Dustbin (1420, 374, 100, 0);
+	BottomBox = new Dustbin (1100, 414, 200, PI/2);
+	LeftBox = new Dustbin (1000, 374, 100,PI);
+	RightBox = new Dustbin (1200, 374, 100,PI);
 
 	Engine.run(engine);
   
@@ -36,14 +36,12 @@ function draw() {
   BottomBox.display();
   LeftBox.display();
   RightBox.display();
-  
-  drawSprites();
  
 }
 
 function keyPressed() {
   if (keyCode === UP_ARROW) {
     Matter.Body.setStatic(paper.body, false);
-      Matter.Body.applyForce(paper.body, paper.body.position, {x:5, y:-5})
+      Matter.Body.applyForce(paper.body, paper.body.position, {x:115, y:-115})
   }
 }
